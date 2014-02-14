@@ -1,6 +1,6 @@
-# Blake Embrey
+# Wojciech Lubicz-Łapiński
 
-This is the personal blog of Blake Embrey, but feel free to fork and reuse the design and implementation for your own blog. The blog is statically generated and deployed to Github pages using Wintersmith.
+This is the personal blog of Wojciech Lubicz-Łapiński, but feel free to fork and reuse the design and implementation for your own blog. The blog is statically generated and deployed to Github pages using Wintersmith.
 
 ## Preview
 
