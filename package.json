@@ -1,7 +1,7 @@
 {
   "name": "blakeembrey.com",
   "version": "0.2.0",
-  "description": "Personal blog of Blake Embrey",
+  "description": "Personal blog of Wojciech Lapinski",
   "private": true,
   "dependencies": {
     "moment": "~2.5.0",
@@ -10,12 +10,12 @@
   },
   "scripts": {
     "preview": "wintersmith preview",
-    "deploy": "rm -rf ./build; wintersmith build; cd ./build && git init . && git add . && git commit -m \"Deploy\"; git push \"git@github.com:blakeembrey/blakeembrey.com.git\" master:gh-pages --force && rm -rf .git"
+    "deploy": "rm -rf ./build; wintersmith build; cd ./build && git init . && git add . && git commit -m \"Deploy\"; git push \"git@github.com:Lu6ith/blog.git\" master:gh-pages --force && rm -rf .git"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/blakeembrey/blakeembrey.com.git"
+    "url": "https://github.com/Lu6ith/blog.git"
   },
-  "author": "Blake Embrey",
+  "author": "Wojciech Lapinski",
   "license": "MIT"
 }
