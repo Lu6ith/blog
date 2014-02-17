@@ -7,6 +7,7 @@
     "description": "My thoughts materialised into a blog"
   },
   "plugins": [
+    "wintersmith-nunjucks",
     "./plugins/paginator.coffee"
   ],
   "require": {

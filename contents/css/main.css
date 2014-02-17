@@ -14,11 +14,24 @@ body {
 
 html {
   color: #333;
-  font-size: 110%;
-  font-family: "Source Sans Pro", Helvetica, Arial, sans-serif;
+  font-size: 1.25em;
+  /*font-family: "Source Sans Pro", Helvetica, Arial, sans-serif;*/
+  font-family: 'Cardo', serif;
+  font-weight: 400;
   line-height: 1.4;
   border-top: 4px solid #f20;
   background-color: #fefefe;
+  text-rendering: optimizeLegibility;
+}
+
+h2 {
+  font-family: "Roboto Condensed", sans-serif;
+  font-size: 1.6em;
+  font-weight: 700;
+}
+
+h1 {
+  font-family: "Roboto Condensed", Helvetica, Arial, sans-serif;
 }
 
 p,

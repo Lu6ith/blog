@@ -10,12 +10,15 @@
   },
   "scripts": {
     "preview": "wintersmith preview",
-    "deploy": "rm -rf ./build; wintersmith build; cd ./build && git init . && git add . && git commit -m \"Deploy\"; git push \"git@github.com:Lu6ith/Lu6ith.github.io.git\" master:gh-pages --force && rm -rf .git"
+    "deploy": "rm -rf ./build; wintersmith build; cd ./build && git init . && git add . && git commit -m \"Deploy\"; git push \"git@github.com:Lu6ith/Lu6ith.github.io.git\" master:master --force && rm -rf .git"
   },
   "repository": {
     "type": "git",
     "url": "https://github.com/Lu6ith/blog.git"
   },
   "author": "Wojciech Lapinski",
-  "license": "MIT"
+  "license": "MIT",
+  "devDependencies": {
+    "wintersmith-nunjucks": "~0.4.1"
+  }
 }
