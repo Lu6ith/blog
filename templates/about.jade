@@ -1,0 +1,16 @@
+extends layout
+
+block append vars
+  - var bodyclass = 'article'
+  - var fullUrl = locals.url + page.url
+
+block prepend title
+  | #{ page.title + " • "}
+
+block content
+  article.is-post.is-post-excerpt
+    header
+      h2
+        a(href='/')= page.title
+      span.byline= page.metadata.subtitle
+    p!= page.html

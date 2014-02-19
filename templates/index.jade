@@ -24,3 +24,10 @@ block content
           li
             a.fa.fa-facebook(href='#') 128
       p!= content.substr(0, 500 + content.substr(500).search(/\W/)) + ' ...'
+  .pager
+    if prevPage
+      a(href=prevPage.url).button.previous Wcześniejsze
+        // i.icon-right-dir
+    if nextPage  
+      a(href=nextPage.url).button.next Poźniejsze 
+        // i.icon-left-dir    
