@@ -1,6 +1,9 @@
 ---
 title: Enabling Generators in Mocha
-date: 2014-02-03 12:30
+subtitle: Using Mocha and Co to generate functions in your test suite
+ethnic: h
+color: #B2DDFA
+date: 2014-02-04 12:30
 author: Blake Embrey
 template: article.jade
 ---

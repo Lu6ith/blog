@@ -1,40 +1,81 @@
 doctype html
-block vars
-  - var bodyclass = 'index';
-html.no-js(lang='en')
+html
   head
     block head
-      meta(charset='utf-8')
-      meta(http-equiv='X-UA-Compatible', content='IE=edge,chrome=1')
-      meta(name='viewport', content='width=device-width')
-      title
-        block title
-          = locals.name
-      //link(rel='author', href='https://plus.google.com/118101720568210469158/posts')
-      link(rel='alternate', href='/feed.xml', type='application/rss+xml', title=locals.description)
-      link(rel='stylesheet', href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700,400italic,700italic|Source+Code+Pro')
-      link(rel='stylesheet', href='http://fonts.googleapis.com/css?family=Roboto+Condensed:700|Roboto+Condensed')        
-      link(rel='stylesheet', href='http://fonts.googleapis.com/css?family=Cardo:400,700,400italic|Cardo')
-      link(rel='stylesheet', href='/css/normalize.css')
-      link(rel='stylesheet', href='/css/main.css')
-      link(rel='stylesheet', href='/css/fontello.css')
-      script.
-        (function(d){d.className=d.className.replace(/\bno-js\b/,'js');})(document.documentElement);
-      //if lt IE 9
-        script(src='//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.6.2/html5shiv.js')
-  body(class=bodyclass)
-    block header
-      header.header.container
-        h1.header-title
-          a(href='/', title=locals.name)= locals.name
-    main.content.container(role='main')
-      block content
-    footer.footer(role='contentinfo')
-      a.icon-home.back-to-home(href='/', title=locals.name)
-      block footer
-        p.container
-          | &copy; #{ new Date().getFullYear() }&nbsp;
-          a(href='http://armblog.pl')= locals.owner
-          | &nbsp;&mdash; powered by&nbsp;
-          a(href='https://github.com/jnordberg/wintersmith') Wintersmith
-    a.fork-me.ir(href='https://github.com/Lu6ith/blog') Fork me on Github
+      title Striped by HTML5 UP
+      meta(http-equiv='content-type', content='text/html; charset=utf-8')
+      meta(name='description', content='')
+      meta(name='keywords', content='')
+      link(href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:400,400italic,700|Open+Sans+Condensed:300,700', rel='stylesheet')
+      script(src='/js/jquery.min.js')
+      script(src='/js/skel.min.js')
+      script(src='/js/skel-panels.min.js')
+      script(src='/js/init.js')
+      //noscript
+      link(rel='stylesheet', href='/css/skel-noscript.css')
+      link(rel='stylesheet', href='/css/style.css')
+      link(rel='stylesheet', href='/css/style-desktop.css')
+      link(rel='stylesheet', href='/css/style-wide.css')
+      link(rel='stylesheet', href='/css/mystyle.css')
+      //if lte IE 9
+        link(rel='stylesheet', href='/css/ie9.css')
+      //if lte IE 8
+        script(src='js/html5shiv.js')
+        link(rel='stylesheet', href='/css/ie8.css')
+      //if lte IE 7
+        link(rel='stylesheet', href='/css/ie7.css')
+    //
+      Note: Set the body element's class to "left-sidebar" to position the sidebar on the left.
+      Set it to "right-sidebar" to, you guessed it, position it on the right.
+  body.left-sidebar
+    //
+       Wrapper 
+    #wrapper
+      //
+         Content 
+      #content
+        #content-inner
+          block content
+      //
+         Sidebar 
+      #sidebar
+        //
+           Logo 
+        #logo
+          h1 ARMblog
+        //
+           Nav 
+        nav#nav
+          ul
+            li.current_page_item
+              a(href='#') Artykuły
+            li
+              a(href='#') Archiwum
+            li
+              a(href='#') O mnie
+            li
+              a(href='#') Kontakt
+        //
+           Search 
+        section.is-search
+          form(method='post', action='#')
+            input.text(type='text', name='search', placeholder='Search')
+        //
+           Text 
+        section.is-text-style1
+          .inner
+            p
+              strong ARMblog:
+              | A free and fully responsive HTML5 site
+              | template designed by
+              a(href='http://n33.co/') AJ
+              | for
+              a(href='http://html5up.net/') HTML5 up!
+        //
+           Copyright 
+        #copyright
+          p
+            | © 2014 Wojciech Lubicz-Łapinski
+            br
+            | Design:
+            a(href='http://html5up.net/') HTML5 UP

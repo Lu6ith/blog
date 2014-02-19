@@ -7,24 +7,22 @@ block append vars
 block prepend title
   | #{ page.title + " • "}
 
+block prepend header
+  a.home.icon-home.back-to-home(href='/', title=locals.name)
+
+block header
+  header.header.container
+    small.header-metadata
+      span.timestamp= moment(page.date).format('MMMM D, YYYY')
+    h1.header-title= page.title
+
 block content
-  article.is-post.is-post-excerpt
-    header
-      h2
-        a(href='/')= page.title
-      span.byline= page.metadata.subtitle
-    .info
-      span.date
-        span.month= moment(page.date).format('MMM')
-          span 
-        span.day= moment(page.date).format('D')
-        span.yeara= moment(page.date).format('YYYY')
-      ul.stats
-        li
-          a.fa.fa-twitter(href='#') 64
-        li
-          a.fa.fa-facebook(href='#') 128
-    p!= page.html
+  article.content-article!= page.html
+  div.content-share
+    a.twitter-follow-button(href="https://twitter.com/" + locals.twitter, data-show-count="false")
+      | Follow @#{ locals.twitter }
+    a.twitter-share-button(href="https://twitter.com/share", data-url=fullUrl, data-text=page.title, data-via=locals.twitter)
+      | Tweet
 
   div#disqus_thread
 

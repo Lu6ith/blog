@@ -3,19 +3,24 @@ extends layout
 block content
   each article in articles
     - var content = article.html.replace(/<[^>]+>/g, '')
-    article.content-article
-      header.content-header
-        small.header-metadata
-          span.timestamp= moment(article.date).format('MMMM D, YYYY')
-        h2.content-title
+    article.is-post.is-post-excerpt
+      header
+        h2
+          if article.metadata.ethnic
+            span(style='color: ' + article.metadata.color)= article.metadata.ethnic
+          else
+            span(style='color: #9ED6FB;') f
           a(href=article.url)= article.title
-      section.content!= content.substr(0, 250 + content.substr(250).search(/\W/)) + ' ...'
-  nav.navigation.cf
-    if prevPage
-      a.btn.navigation-next(href=prevPage.url)
-        | Newer&nbsp;&nbsp;
-        i.icon-right-dir
-    if nextPage
-      a.btn.navigation-prev(href=nextPage.url)
-        i.icon-left-dir
-        | &nbsp;&nbsp;Older
+        span.byline= article.metadata.subtitle
+      .info
+        span.date
+          span.month= moment(article.date).format('MMM')
+            span 
+          span.day= moment(article.date).format('D')
+          span.yeara= moment(article.date).format('YYYY')
+        ul.stats
+          li
+            a.fa.fa-twitter(href='#') 64
+          li
+            a.fa.fa-facebook(href='#') 128
+      p!= content.substr(0, 500 + content.substr(500).search(/\W/)) + ' ...'
