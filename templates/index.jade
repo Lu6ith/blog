@@ -3,6 +3,8 @@ extends layout
 block content
   each article in articles
     - var content = article.html.replace(/<[^>]+>/g, '')
+    - var pl = moment.lang('pl')
+
     article.is-post.is-post-excerpt
       header
         h2
@@ -14,7 +16,7 @@ block content
         span.byline= article.metadata.subtitle
       .info
         span.date
-          span.month= moment(article.date).format('MMM')
+          span.month= moment(article.date).lang('pl').format('MMM')
             span 
           span.day= moment(article.date).format('D')
           span.yeara= moment(article.date).format('YYYY')
@@ -24,6 +26,8 @@ block content
           li
             a.fa.fa-facebook(href='#') 128
       p!= content.substr(0, 500 + content.substr(500).search(/\W/)) + ' ...'
+      a(href=article.url).-10u Czytaj dalej ...
+        // a(href=article.url).button.button-alt.button-small.-10u Czytaj dalej ...
   .pager
     if prevPage
       a(href=prevPage.url).button.previous Wcześniejsze
