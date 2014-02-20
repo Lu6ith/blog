@@ -1,0 +1,17 @@
+extends layout
+
+block append vars
+  - var bodyclass = 'article'
+  - var fullUrl = locals.url + page.url
+
+block prepend title
+  | #{ page.title + " • "}
+
+block content
+  article.is-post.is-post-excerpt
+    header
+      h2
+        a(href='/')= page.title
+      span.byline= page.metadata.subtitle
+    p!= page.html
+    iframe(src='http://zappyforms.com/form-webpack.php?form_num=4713351505', frameborder='0', scrolling='no', width='100%', height='650px')
