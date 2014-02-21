@@ -25,8 +25,12 @@ block content
             a.fa.fa-twitter(href='#') 64
           li
             a.fa.fa-facebook(href='#') 128
-      p!= content.substr(0, 500 + content.substr(500).search(/\W/)) + ' ...'
-      a(href=article.url).-10u Czytaj dalej ...
+      p!= content.substr(0, 500 + content.substr(500).search(/\W/)) + ' ...' + '</br>'
+        a(href=article.url).-10u Czytaj dalej ...
+      if article.metadata.tags
+        spa.fa.fa-tags Tagi: 
+          each tag in article.metadata.tags
+            span.button.button-alt.button-tiny= tag
         // a(href=article.url).button.button-alt.button-small.-10u Czytaj dalej ...
   .pager
     if prevPage
