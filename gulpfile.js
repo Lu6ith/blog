@@ -60,14 +60,14 @@ gulp.task('clean', function() {
 });
 
 // Execute wintersmith preview
-gulp.task('preview', function() {
+gulp.task('remove', function() {
   var options = {
-    silent: true,
+    silent: false,
     continueOnError: true, // default: false
-    customTemplatingThing: "test"
+    catalog: "./build"
   };
-  return gulp.src('./**/**')
-    .pipe(exec('npm run preview', options));
+ gulp.src('./build')
+    .pipe(exec('rm -rf ./build', options));
 });
 
 // Usage of preview action
@@ -83,8 +83,8 @@ gulp.task('site-build', function() {
 });
  
 // Default task
-gulp.task('default', ['clean'], function() {
-    gulp.start('styles', 'scripts', 'images');
+gulp.task('default', ['site-build'], function() {
+    gulp.start('styles', 'scripts');
 });
  
 // Watch
